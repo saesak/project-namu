@@ -6,10 +6,9 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
 
-
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Bookmarks() {
   const router = useRouter();
   const [paths, setPaths] = useState([
     {
@@ -49,7 +48,7 @@ export default function Home() {
         }
     ],
     bookmarked: false,
-    visible: true
+    visible: false
     },
     {
     name: "anonymous tree 2",
@@ -88,7 +87,7 @@ export default function Home() {
         },
     ],
     bookmarked: false,
-    visible: true
+    visible: false
     },
     {
     name: "anonymous tree 3",
@@ -111,7 +110,7 @@ export default function Home() {
         }
     ],
     bookmarked: false,
-    visible: true
+    visible: false
     },
     {
     name: "anonymous tree 4",
@@ -142,12 +141,11 @@ export default function Home() {
         },
     ],
     bookmarked: false,
-    visible: true
+    visible: false
     }
 ]);
 
   const [currTime, setCurrTime] = useState(2023)
-
 
   return (
     <div className = "overall">
@@ -156,6 +154,8 @@ export default function Home() {
           <button onClick={() => router.push('/')}>Home</button>
           <button onClick={() => router.push('/bookmarks')}>Bookmarks</button>
         </div>
+
+
       </main>
     </div>
   )
