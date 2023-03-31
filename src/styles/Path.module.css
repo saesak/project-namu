@@ -1,0 +1,46 @@
+.timeline {
+    width: 5%;
+    height: 1px;
+    background-color: green;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.path {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.circleIcon {
+    background-color: white;
+    border-radius: 50%;
+    height: 6vw;
+    width: 6vw;
+    display: flex;
+}
+
+.icon {
+    height: 2vw;
+    width: 2vw;
+    margin: auto;
+    display: flex;
+}
+
+.bookmark {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 2vw;
+    width: 2vw;
+}
+
+.pathContainer{
+    display: flex;
+}

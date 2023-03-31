@@ -40,7 +40,7 @@ export default function Bookmarks() {
         },
         {
             start: 2020,
-            end: -1,
+            end: 2023,
             icon: "../img/purpleLeaf.png",
             size: 1.5,
             company: "PurpleLeaf",
@@ -79,7 +79,7 @@ export default function Bookmarks() {
         },
         {
             start: 2019,
-            end: -1,
+            end: 2023,
             icon: "../img/docker.png",
             size: 2,
             company: "Docker",
@@ -102,7 +102,7 @@ export default function Bookmarks() {
         },
         {
             start: 2016,
-            end: -1,
+            end: 2023,
             icon: "../img/hsbc.png",
             size: 4,
             company: "HSBC",
@@ -133,7 +133,7 @@ export default function Bookmarks() {
         },
         {
             start: 2017,
-            end: -1,
+            end: 2023,
             icon: "../img/spotify.png",
             size: 4,
             company: "Spotify",
