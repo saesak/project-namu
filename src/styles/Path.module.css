@@ -6,7 +6,9 @@
     margin-bottom: auto;
 }
 
-
+.name {
+    margin-left: 15%;
+}
 
 .container {
     display: flex;

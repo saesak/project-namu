@@ -1,0 +1,9 @@
+.checkAndName {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkboxIcon {
+    height: 3vw;
+    width: 3vw;
+}

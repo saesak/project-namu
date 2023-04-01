@@ -30,8 +30,21 @@ export default function Path(props: pathProps) {
     
     const[path, setPath] = useState(props);
 
+    function updateBookmark() {
+        let change : pathProps = path;
+        let newChange = {...change, bookmarked: true};
+        if (path.bookmarked == true) {
+            newChange = {...change, bookmarked: false};
+        } else {
+            newChange = {...change, bookmarked: true};
+        }
+        
+        
+        setPath(newChange);
+    }
+
     useEffect(() => {
-        setPath(props);
+        //console.log(props);
     }, [props]);
 
     return (
@@ -59,13 +72,13 @@ export default function Path(props: pathProps) {
                     ))}
                     {path.bookmarked ? (
                         <img 
-                        onClick={() => path.bookmarkStateChange(path.index)}
+                        onClick={() => {updateBookmark(); props.bookmarkStateChange(path.index)}}
                         className={styles.bookmark}
                         src='/img/bookmarkFilled.png'/>
                         
                     ) : (
                         <img 
-                        onClick={() => path.bookmarkStateChange(path.index)}
+                        onClick={() => {updateBookmark(); props.bookmarkStateChange(path.index)}}
                         className={styles.bookmark}
                         src='/img/bookmarkUnfilled.png'/>
                     )}
