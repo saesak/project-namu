@@ -31,16 +31,10 @@ export default function Path(props: pathProps) {
     const[path, setPath] = useState(props);
 
     function updateBookmark() {
-        let change : pathProps = path;
-        let newChange = {...change, bookmarked: true};
-        if (path.bookmarked == true) {
-            newChange = {...change, bookmarked: false};
-        } else {
-            newChange = {...change, bookmarked: true};
-        }
-        
-        
-        setPath(newChange);
+        setPath((prevState) => ({
+            ...prevState,
+            bookmarked: !prevState.bookmarked,
+          }));
     }
 
     useEffect(() => {
@@ -59,10 +53,16 @@ export default function Path(props: pathProps) {
                 <div className = {styles.path}>
                     {path.pathData.map((data, index) => (
                     <div key={index} className={styles.pathContainer}>
+                    <div className = {styles.circleOverall}>
                     <div className={styles.circleIcon}>
                         <img 
                         className={styles.icon}
                         src={data.icon}></img>
+                    </div>
+                    <div className={styles.jobDesc}>
+                        <p>{data.occupation}</p>
+                        <p>@{data.company}</p>
+                    </div>
                     </div>
                     <div 
                     style={{ width:  `${(data.end - data.start)*3}vw`}}

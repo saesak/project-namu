@@ -16,7 +16,6 @@ export default function Bookmarks() {
   const [stateCopy, setStateCopy] = useState(state.pathArray.filter(item => item.bookmarked));
 
 
-
   const [currTime, setCurrTime] = useState(2023)
 
   
@@ -28,11 +27,18 @@ export default function Bookmarks() {
   }
 
 function visibleStateChange(index : number) {
-    let og = state;
-    let change = og.pathArray;
-    change[index].visible =  !(change[index].visible);
-    console.log(og);
-    setState(og);
+    //setState(prevState => ({
+    //    ...prevState,
+    //    visible: !prevState.pathArray[index].visible
+    //  }));
+
+    setState(prevState => {
+        const pathArray = [...prevState.pathArray]; // create a copy of the pathArray
+        pathArray[index].visible = !pathArray[index].visible; // update the visible property
+        return { ...prevState, pathArray }; // return a new state object with updated pathArray
+      });
+    console.log(state);
+
 }
 
   useEffect(() => {
