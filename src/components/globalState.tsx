@@ -159,7 +159,84 @@ export const initialState: pathArray = {
         ],
         bookmarked: false,
         visible: true
-        }
+        },
+        {
+            name: "anonymous tree 5",
+            pathData: [
+                {
+                    start: 2009,
+                    end: 2012,
+                    icon: "../img/KingsCollege.png",
+                    size: 1.5,
+                    company: "King's College",
+                    occupation: "Undergraduate",
+                },
+                {
+                    start: 2012,
+                    end: 2023,
+                    icon: "../img/bain.png",
+                    size: 1.5,
+                    company: "Bain",
+                    occupation: "Associate",
+                },
+            ],
+            bookmarked: false,
+            visible: true
+            },
+            {
+                name: "anonymous tree 6",
+                pathData: [
+                    {
+                        start: 2017,
+                        end: 2021,
+                        icon: "../img/UPenn.png",
+                        size: 1.5,
+                        company: "University of Pennsylvania",
+                        occupation: "Undergraduate",
+                    },
+                    {
+                        start: 2021,
+                        end: 2023,
+                        icon: "../img/spotify.png",
+                        size: 4,
+                        company: "Spotify",
+                        occupation: "Product Designer",
+                    },
+                ],
+                bookmarked: false,
+                visible: true
+                },
+                {
+                    name: "anonymous tree 7",
+                    pathData: [
+                        {
+                            start: 2009,
+                            end: 2012,
+                            icon: "../img/NWU.png",
+                            size: 1.5,
+                            company: "Northwestern University",
+                            occupation: "Undergraduate",
+                        },
+                        {
+                            start: 2012,
+                            end: 2017,
+                            icon: "../img/spotify.png",
+                            size: 1.5,
+                            company: "Spotify",
+                            occupation: "Software Engineer",
+                        },
+                        {
+                            start: 2017,
+                            end: 2023,
+                            icon: "../img/spotify.png",
+                            size: 4,
+                            company: "Spotify",
+                            occupation: "Product Designer",
+                        },
+                    ],
+                    bookmarked: false,
+                    visible: true
+                    }
     ]
 };
 

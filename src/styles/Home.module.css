@@ -12,3 +12,28 @@
   background-color: #F0F0F0;
 }
 
+.sidebarPath {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebarImg {
+  height: 7vw;
+  width: 7vw;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  min-height: 100vh;
+  padding-right: 10%;
+}
+
+.path {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}

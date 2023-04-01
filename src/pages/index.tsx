@@ -15,7 +15,7 @@ export default function Home() {
   
 
 
-
+  const [randSelect, setRandSelect] = useState(state.pathArray);
   const [currTime, setCurrTime] = useState(2023)
   
   function bookmarkStateChange(index : number) {
@@ -25,9 +25,13 @@ export default function Home() {
     setState(og);
   }
 
+  function shuffle() {
+    console.log('hi');
+  }
+
   useEffect(() => {
     console.log(state);
-  }, [state]);
+  }, [state, randSelect]);
 
   return (
     <main>
@@ -36,7 +40,15 @@ export default function Home() {
           <button onClick={() => router.push('/')}>Home</button>
           <button onClick={() => router.push('/bookmarks')}>Bookmarks</button>
         </div>
-        {state.pathArray.map((path, index) => (
+        <div className = {styles.sidebarPath}>
+        <div className = {styles.sidebar}>
+          <img
+          onClick={shuffle}
+          className = {styles.sidebarImg} 
+          src='/img/shuffle.png'/>
+        </div>
+        <div className = {styles.path}>
+        {randSelect.map((path, index) => (
           <Path 
           key={index}
           index = {index}
@@ -47,6 +59,8 @@ export default function Home() {
           bookmarkStateChange = {bookmarkStateChange}
           />
         ))}
+        </div>
+        </div>
         
     </div>
     </main>
