@@ -1,0 +1,32 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.popup {
+    position: absolute;
+    z-index: 1;
+    right: 25px;
+    width: 200px;
+    background-color: white;
+    padding: 0 0 20px 20px;
+    border-radius: 12px;
+}
+
+.popup button {
+    background-color: #8DCD03;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 80px;
+    height: 35px;
+}
+
+.popup button:hover {
+    background-color: #7cb600;
+}

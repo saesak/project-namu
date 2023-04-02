@@ -5,6 +5,7 @@ import styles from '@/styles/Path.module.css'
 import '@/styles/Path.module.css'
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
+import Popup from './categoryPopup'
 
 
 interface path {
@@ -29,6 +30,7 @@ interface pathProps {
 export default function Path(props: pathProps) {
     
     const[path, setPath] = useState(props);
+    const[bookmarkPopup, setBookmarkPopup] = useState(false);
 
     function updateBookmark() {
         setPath((prevState) => ({
@@ -71,16 +73,31 @@ export default function Path(props: pathProps) {
                     </div>
                     ))}
                     {path.bookmarked ? (
+                        <>
                         <img 
                         onClick={() => {updateBookmark(); props.bookmarkStateChange(path.index)}}
                         className={styles.bookmark}
                         src='/img/bookmarkFilled.png'/>
-                        
+                        <Popup trigger={bookmarkPopup} setTrigger={setBookmarkPopup}>
+                            <p>Dream Companies</p>
+                            <p>Cool People</p>
+                            <p>Near Me</p>
+                        </Popup>
+                        </>
                     ) : (
+                        <>
                         <img 
-                        onClick={() => {updateBookmark(); props.bookmarkStateChange(path.index)}}
+                        onClick={() => {updateBookmark(); props.bookmarkStateChange(path.index); setBookmarkPopup(true)}}
                         className={styles.bookmark}
                         src='/img/bookmarkUnfilled.png'/>
+                        <Popup trigger={bookmarkPopup} setTrigger={setBookmarkPopup}>
+                            <p>Dream Companies</p>
+                            <div className="divider"></div>
+                            <p>Cool People</p>
+                            <p>Near Me</p>
+                            <div className="divider"></div>
+                        </Popup>
+                        </>
                     )}
                 </div>
             </div>
