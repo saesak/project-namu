@@ -6,14 +6,13 @@ import { useRouter } from 'next/router';
 import React, { useState, useEffect, useContext } from 'react';
 import Path from '@/components/path';
 import { pathContextHook } from '@/components/globalState';
+import NavBar from '@/components/navBar';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const router = useRouter();
   const {state, setState} = useContext(pathContextHook);
-  
-
 
   const [randSelect, setRandSelect] = useState(state.pathArray);
   const [currTime, setCurrTime] = useState(2023)
@@ -36,16 +35,33 @@ export default function Home() {
   return (
     <main>
     <div className = {styles.container}>
-        <div className = {styles.header}>
-          <button onClick={() => router.push('/')}>Home</button>
-          <button onClick={() => router.push('/bookmarks')}>Bookmarks</button>
-        </div>
+        <NavBar />
         <div className = {styles.sidebarPath}>
         <div className = {styles.sidebar}>
           <img
           onClick={shuffle}
           className = {styles.sidebarImg} 
           src='/img/shuffle.png'/>
+          <h3>Filters</h3>
+          <div className={styles.searchBar}>
+            <p>University</p>
+            <img src='/img/magnifying-glass.svg'/>
+          </div>
+          <div className={styles.divider}></div>
+          <div className={styles.searchBar}>
+            <p>Position</p>
+            <img src='/img/magnifying-glass.svg'/>
+          </div>
+          <div className={styles.tags}>
+            <p>Product Design</p>
+            <img src='/img/cross.svg'/>
+          </div>
+          <div className={styles.divider}></div>
+          <div className={styles.searchBar}>
+            <p>Company</p>
+            <img src='/img/magnifying-glass.svg'/>
+          </div>
+          <div className={styles.divider}></div>
         </div>
         <div className = {styles.path}>
         {randSelect.map((path, index) => (

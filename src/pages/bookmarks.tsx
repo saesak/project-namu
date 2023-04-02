@@ -7,6 +7,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import Path from '@/components/path';
 import BookmarkBar from '@/components/bookmarkBar';
 import { pathContextHook } from '@/components/globalState';
+import NavBar from '@/components/navBar';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -47,10 +48,7 @@ function visibleStateChange(index : number) {
   return (
     <main>
     <div className = {styles.container}>
-        <div className = {styles.header}>
-          <button onClick={() => router.push('/')}>Home</button>
-          <button onClick={() => router.push('/bookmarks')}>Bookmarks</button>
-        </div>
+        <NavBar />
         <div className = {styles.sidebarPath}>
             <div className = {styles.sidebar}>
                 <p>Bookmarks</p>

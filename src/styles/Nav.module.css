@@ -1,0 +1,35 @@
+.nav {
+    background-color: white;
+    color: black;
+    font-weight: 500;
+    width: 100%;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav li:hover {
+    color: grey;
+    cursor: pointer;
+}
+
+.nav li:active {
+    color: #8DCD03;
+}
+
+.nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.mypathway {
+    font-weight: 600;
+    font-size: 1.2em;
+    padding-left: 30vw;
+}
+
+
