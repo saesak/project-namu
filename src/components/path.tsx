@@ -18,7 +18,7 @@ interface path {
 }
 
 interface pathProps {
-    index: number;
+    id: number,
     name: string;
     pathData: Array<path>;
     bookmarked: boolean;
@@ -33,10 +33,10 @@ export default function Path(props: pathProps) {
     const[bookmarkPopup, setBookmarkPopup] = useState(false);
 
     function updateBookmark() {
-        setPath((prevState) => ({
-            ...prevState,
-            bookmarked: !prevState.bookmarked,
-          }));
+
+        let newPath = {...path};
+        newPath.bookmarked = !newPath.bookmarked
+        setPath(newPath);
     }
 
     useEffect(() => {
@@ -75,7 +75,7 @@ export default function Path(props: pathProps) {
                     {path.bookmarked ? (
                         <>
                         <img 
-                        onClick={() => {updateBookmark(); props.bookmarkStateChange(path.index)}}
+                        onClick={() => {updateBookmark(); props.bookmarkStateChange(path.id)}}
                         className={styles.bookmark}
                         src='/img/bookmarkFilled.png'/>
                         <Popup trigger={bookmarkPopup} setTrigger={setBookmarkPopup}>
@@ -87,7 +87,7 @@ export default function Path(props: pathProps) {
                     ) : (
                         <>
                         <img 
-                        onClick={() => {updateBookmark(); props.bookmarkStateChange(path.index); setBookmarkPopup(true)}}
+                        onClick={() => {updateBookmark(); props.bookmarkStateChange(path.id); setBookmarkPopup(true)}}
                         className={styles.bookmark}
                         src='/img/bookmarkUnfilled.png'/>
                         <Popup trigger={bookmarkPopup} setTrigger={setBookmarkPopup}>

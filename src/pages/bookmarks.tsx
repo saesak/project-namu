@@ -20,29 +20,33 @@ export default function Bookmarks() {
   const [currTime, setCurrTime] = useState(2023)
 
   
-  function bookmarkStateChange(index : number) {
-    let og = state;
-    let change = og.pathArray;
-    change[index].bookmarked =  !(change[index].bookmarked);
+  function bookmarkStateChange(id : number) {
+    let og = {...state};
+    for (let i = 0; i < og.pathArray.length; i++) {
+      if(og.pathArray[i].id == id) {
+        og.pathArray[i].bookmarked = !(og.pathArray[i].bookmarked);
+      }
+    }
     setState(og);
   }
 
-function visibleStateChange(index : number) {
+function visibleStateChange(id : number) {
     //setState(prevState => ({
     //    ...prevState,
     //    visible: !prevState.pathArray[index].visible
     //  }));
-
-    setState(prevState => {
-        const pathArray = [...prevState.pathArray]; // create a copy of the pathArray
-        pathArray[index].visible = !pathArray[index].visible; // update the visible property
-        return { ...prevState, pathArray }; // return a new state object with updated pathArray
-      });
-    console.log(state);
-
+    const og = {...state};
+    for (let i = 0; i < og.pathArray.length; i++) {
+      if(og.pathArray[i].id == id) {
+        og.pathArray[i].visible = !(og.pathArray[i].visible);
+      }
+    }
+    setState(og);
 }
 
   useEffect(() => {
+    console.log('useeffect bookmarks')
+    console.log(state);
   }, [state]);
 
   return (
@@ -54,8 +58,8 @@ function visibleStateChange(index : number) {
                 <p>Bookmarks</p>
                 {state.pathArray.filter(item => item.bookmarked).map((path, index) => (
                     <BookmarkBar
-                    key = {index}
-                    index = {index}
+                    key = {path.id}
+                    id = {path.id}
                     name = {path.name}
                     visible = {!path.visible}
                     visibleStateChange = {visibleStateChange}
@@ -65,9 +69,10 @@ function visibleStateChange(index : number) {
             </div>
             <div className= {styles.path}>
             {state.pathArray.filter(item => item.bookmarked).map((path, index) => (
+              !path.visible &&
                 <Path 
-                key={index}
-                index = {index}
+                key={path.id}
+                id = {path.id}
                 name = {path.name}
                 pathData = {path.pathData}
                 bookmarked = {path.bookmarked}

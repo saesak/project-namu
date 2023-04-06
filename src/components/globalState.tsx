@@ -11,6 +11,7 @@ interface path {
 }
 
 interface pathState {
+    id: number,
     name: string;
     pathData: Array<path>;
     bookmarked: boolean;
@@ -29,6 +30,7 @@ interface pathContext {
 export const initialState: pathArray = {
     pathArray: [
         {
+        id: 0,
         name: "anonymous tree 1",
         pathData: [
             {
@@ -68,6 +70,7 @@ export const initialState: pathArray = {
         visible: true
         },
         {
+        id: 1,
         name: "anonymous tree 2",
         pathData: [
             {
@@ -107,6 +110,7 @@ export const initialState: pathArray = {
         visible: true
         },
         {
+        id: 2,
         name: "anonymous tree 3",
         pathData: [
             {
@@ -130,6 +134,7 @@ export const initialState: pathArray = {
         visible: true
         },
         {
+        id: 3,
         name: "anonymous tree 4",
         pathData: [
             {
@@ -161,6 +166,7 @@ export const initialState: pathArray = {
         visible: true
         },
         {
+            id: 4,
             name: "anonymous tree 5",
             pathData: [
                 {
@@ -184,6 +190,7 @@ export const initialState: pathArray = {
             visible: true
             },
             {
+                id: 5,
                 name: "anonymous tree 6",
                 pathData: [
                     {
@@ -207,6 +214,7 @@ export const initialState: pathArray = {
                 visible: true
                 },
                 {
+                    id: 6,
                     name: "anonymous tree 7",
                     pathData: [
                         {

@@ -14,13 +14,15 @@ export default function Home() {
   const router = useRouter();
   const {state, setState} = useContext(pathContextHook);
 
-  const [randSelect, setRandSelect] = useState(state.pathArray);
   const [currTime, setCurrTime] = useState(2023)
   
-  function bookmarkStateChange(index : number) {
-    let og = state;
-    let change = og.pathArray;
-    change[index].bookmarked =  !(change[index].bookmarked);
+  function bookmarkStateChange(id : number) {
+    let og = {...state};
+    for (let i = 0; i < og.pathArray.length; i++) {
+      if(og.pathArray[i].id == id) {
+        og.pathArray[i].bookmarked = !(og.pathArray[i].bookmarked);
+      }
+    }
     setState(og);
   }
 
@@ -30,7 +32,7 @@ export default function Home() {
 
   useEffect(() => {
     console.log(state);
-  }, [state, randSelect]);
+  }, [state]);
 
   return (
     <main>
@@ -64,10 +66,10 @@ export default function Home() {
           <div className={styles.divider}></div>
         </div>
         <div className = {styles.path}>
-        {randSelect.map((path, index) => (
+        {state.pathArray.map((path, index) => (
           <Path 
-          key={index}
-          index = {index}
+          key={path.id}
+          id = {path.id}
           name = {path.name}
           pathData = {path.pathData}
           bookmarked = {path.bookmarked}
