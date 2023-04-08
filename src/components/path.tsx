@@ -65,14 +65,9 @@ export default function Path(props: pathProps) {
                     <p>{path.name}</p>
                 </div>
                 <div className = {styles.path}>
-                    <div className = {styles.pathEducation}>
-                        <img 
-                        src = "/img/education.png"
-                        onClick={() => {updateEducation();}}
-                        className={styles.educationIcon}/>
-                    </div>
                     {path.pathData.map((data, index) => (
                     <div key={index} className={styles.pathContainer}>
+                    { index === 0 && <div className={styles.hoverText}> <p>Show Education</p> </div>}
                     <div className = {styles.circleOverall}>
                     <div className={styles.circleIcon}>
                         <img 

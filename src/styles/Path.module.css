@@ -60,6 +60,7 @@
     display: flex;
 }
 
+
 .pathEducation {
     display: flex;
     padding: 1.5vw;
@@ -72,4 +73,19 @@
     border-radius: 50%;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.hoverText {
+    display: none;
+    margin-top: 3vw;
+    text-align: center;
+    position: absolute;
+    background-color: white;
+    height: 3vw;
+    width: 7vw;
+    font-size: small;
+}
+
+.pathContainer:hover .hoverText {
+    display: block;
 }
