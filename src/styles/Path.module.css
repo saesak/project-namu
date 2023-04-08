@@ -59,3 +59,17 @@
 .pathContainer{
     display: flex;
 }
+
+.pathEducation {
+    display: flex;
+    padding: 1.5vw;
+}
+
+.educationIcon {
+    height: 2.5vw;
+    width: 2.5vw;
+    background-color:#8DCD03;
+    border-radius: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+}

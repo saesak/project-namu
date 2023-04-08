@@ -12,10 +12,14 @@ interface path {
 
 interface pathState {
     id: number,
-    name: string;
-    pathData: Array<path>;
-    bookmarked: boolean;
-    visible: boolean;
+    name: string,
+    education: {
+        major: string,
+        minor: string,
+    },
+    pathData: Array<path>,
+    bookmarked: boolean,
+    visible: boolean,
 } 
 
 interface pathArray {
@@ -32,6 +36,10 @@ export const initialState: pathArray = {
         {
         id: 0,
         name: "anonymous tree 1",
+        education: {
+            major: "Computer Science",
+            minor: "None",
+        },
         pathData: [
             {
                 start: 2009,
@@ -72,6 +80,10 @@ export const initialState: pathArray = {
         {
         id: 1,
         name: "anonymous tree 2",
+        education: {
+            major: "Computer Science",
+            minor: "Cognitive Science",
+        },
         pathData: [
             {
                 start: 2010,
@@ -112,6 +124,10 @@ export const initialState: pathArray = {
         {
         id: 2,
         name: "anonymous tree 3",
+        education: {
+            major: "Finance",
+            minor: "None",
+        },
         pathData: [
             {
                 start: 2013,
@@ -136,6 +152,10 @@ export const initialState: pathArray = {
         {
         id: 3,
         name: "anonymous tree 4",
+        education: {
+            major: "Business Operations",
+            minor: "Finance",
+        },
         pathData: [
             {
                 start: 2009,
@@ -168,6 +188,10 @@ export const initialState: pathArray = {
         {
             id: 4,
             name: "anonymous tree 5",
+            education: {
+                major: "Biological Basis of Behavior",
+                minor: "English",
+            },
             pathData: [
                 {
                     start: 2009,
@@ -192,6 +216,10 @@ export const initialState: pathArray = {
             {
                 id: 5,
                 name: "anonymous tree 6",
+                education: {
+                    major: "Design",
+                    minor: "Computer Science",
+                },
                 pathData: [
                     {
                         start: 2017,
@@ -216,6 +244,10 @@ export const initialState: pathArray = {
                 {
                     id: 6,
                     name: "anonymous tree 7",
+                    education: {
+                        major: "Computer Science",
+                        minor: "Design",
+                    },
                     pathData: [
                         {
                             start: 2009,

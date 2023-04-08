@@ -6,6 +6,8 @@ import '@/styles/Path.module.css'
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import Popup from './categoryPopup'
+import SlideOut from './slideOut'
+
 
 
 interface path {
@@ -31,12 +33,19 @@ export default function Path(props: pathProps) {
     
     const[path, setPath] = useState(props);
     const[bookmarkPopup, setBookmarkPopup] = useState(false);
+    const[educationSlider, setEducationSlider] = useState(false);
 
     function updateBookmark() {
 
         let newPath = {...path};
         newPath.bookmarked = !newPath.bookmarked
         setPath(newPath);
+    }
+
+    function updateEducation() {
+        let slider = !educationSlider;
+        setEducationSlider(slider);
+        console.log(educationSlider);
     }
 
     useEffect(() => {
@@ -48,11 +57,20 @@ export default function Path(props: pathProps) {
             <Head>
             </Head>
         {path.visible ? (
-            <div className = {styles.container}>
+            <div onClick={() => {updateEducation();}}className = {styles.container}>
+                <div>
+                    <SlideOut isOpen={educationSlider} />
+                </div>
                 <div className = {styles.name}>
                     <p>{path.name}</p>
                 </div>
                 <div className = {styles.path}>
+                    <div className = {styles.pathEducation}>
+                        <img 
+                        src = "/img/education.png"
+                        onClick={() => {updateEducation();}}
+                        className={styles.educationIcon}/>
+                    </div>
                     {path.pathData.map((data, index) => (
                     <div key={index} className={styles.pathContainer}>
                     <div className = {styles.circleOverall}>
