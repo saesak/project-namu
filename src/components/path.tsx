@@ -48,6 +48,12 @@ export default function Path(props: pathProps) {
         console.log(educationSlider);
     }
 
+    function closeEducation() {
+        if (educationSlider) {
+            setEducationSlider(false);
+        }
+    }
+
     useEffect(() => {
         //console.log(props);
     }, [props]);
@@ -57,7 +63,7 @@ export default function Path(props: pathProps) {
             <Head>
             </Head>
         {path.visible ? (
-            <div onClick={() => {updateEducation();}}className = {styles.container}>
+            <div onClick={() => {closeEducation();}}className = {styles.container}>
                 <div>
                     <SlideOut isOpen={educationSlider} />
                 </div>
@@ -67,22 +73,23 @@ export default function Path(props: pathProps) {
                 <div className = {styles.path}>
                     {path.pathData.map((data, index) => (
                     <div key={index} className={styles.pathContainer}>
-                    { index === 0 && <div className={styles.hoverText}> <p>Show Education</p> </div>}
+                    { index === 0 && <div className={styles.hoverText}> <p>See Education</p> </div>}
                     <div className = {styles.circleOverall}>
-                    <div className={styles.circleIcon}>
-                        <img 
-                        className={styles.icon}
-                        src={data.icon}></img>
-                    </div>
-                    <div className={styles.jobDesc}>
-                        <p>{data.occupation}</p>
-                        <p>@{data.company}</p>
-                    </div>
-                    </div>
-                    <div 
-                    style={{ width:  `${(data.end - data.start)*3}vw`}}
-                    className={styles.timeline}
-                    ></div>
+                        <div className={styles.circleIcon} onClick={() => {updateEducation();}}>
+                            <img 
+                            className={styles.icon}
+                            src={data.icon}></img>
+                        </div>
+                        <div className={styles.jobDesc}>
+                            <p>{data.occupation}</p>
+                            <p>@{data.company}</p>
+                        </div>
+                        </div>
+                        <div 
+                        style={{ width:  `${(data.end - data.start)*3}vw`}}
+                        className={styles.timeline}
+                        ></div>
+
                     </div>
                     ))}
                     {path.bookmarked ? (
