@@ -36,7 +36,7 @@ export default function Path(props: pathProps) {
     const[educationSlider, setEducationSlider] = useState(false);
 
     function updateBookmark() {
-
+        console.log("hi");
         let newPath = {...path};
         newPath.bookmarked = !newPath.bookmarked
         setPath(newPath);
