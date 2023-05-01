@@ -80,3 +80,22 @@
   margin: 14px 0 14px 0;
 }
 
+.aggregateButton {
+  margin-top: 8vh;
+}
+
+.aggregateButton img {
+  height: 5vh;
+  width: 5vh;
+  background-color: white;
+}
+
+.timeline {
+  background-color: white;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.timeline img {
+  width: 80%;
+}

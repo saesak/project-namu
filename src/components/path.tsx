@@ -6,7 +6,7 @@ import '@/styles/Path.module.css'
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import Popup from './categoryPopup'
-import SlideOut from './slideOut'
+import SlideOutLeft from './slideOutLeft'
 
 
 
@@ -65,7 +65,7 @@ export default function Path(props: pathProps) {
         {path.visible ? (
             <div onClick={() => {closeEducation();}}className = {styles.container}>
                 <div>
-                    <SlideOut isOpen={educationSlider} />
+                    <SlideOutLeft isOpen={educationSlider} />
                 </div>
                 <div className = {styles.name}>
                     <p>{path.name}</p>

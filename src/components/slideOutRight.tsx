@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import styles from '@/styles/SlideOut.module.css'
+import styles from '@/styles/SlideOutRight.module.css'
 
 interface SlideOutProps {
   isOpen: boolean;
 }
 
-const SlideOut: React.FC<SlideOutProps> = ({ isOpen }) => {
+const SlideOutRight: React.FC<SlideOutProps> = ({ isOpen }) => {
 
     let something: any = "hide";
 
@@ -23,9 +23,9 @@ const SlideOut: React.FC<SlideOutProps> = ({ isOpen }) => {
     <div className= {`${styles.slideOut} ${isOpen ? styles.slideOutShow : styles.slideOutHide}`}>
       <img
         className = {styles.slideOutImg}
-        src='/img/educationPanel.png'/>
+        src='/img/aggregatePopout.png'/>
     </div>
   );
 };
 
-export default SlideOut;
+export default SlideOutRight;

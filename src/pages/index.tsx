@@ -8,6 +8,7 @@ import Path from '@/components/path';
 import { pathContextHook } from '@/components/globalState';
 import NavBar from '@/components/navBar';
 import Dropdown from '@/components/dropdown';
+import SlideOutRight from '@/components/slideOutRight';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +18,19 @@ export default function Home() {
   const [university, setUniversity] = useState("University");
   const [position, setPosition] = useState("Position");
   const [company, setCompany] = useState("Company");
+  const [aggregateSlider, setAggregateSlider] = useState(false);
 
+  function updateAggregate() {
+    let slider = !aggregateSlider;
+    setAggregateSlider(slider);
+    console.log(aggregateSlider);
+}
+
+function closeAggregate() {
+    if (aggregateSlider) {
+      setAggregateSlider(false);
+    }
+}
 
   let count = 0;
   const [filtered, setFiltered] = useState(state.pathArray.filter((element) => {
@@ -138,51 +151,56 @@ export default function Home() {
 
   return (
     <main>
-    <div className = {styles.container}>
+    <div className = {styles.container}
+    onClick={() => {closeAggregate();}}>
         <NavBar />
+        <div className = {styles.timeline}>
+          <img src='/img/timeline.png'></img>
+        </div>
+        <div>
+          <SlideOutRight isOpen={aggregateSlider} />
+        </div>
         <div className = {styles.sidebarPath}>
-        <div className = {styles.sidebar}>
-          <img
-          onClick={shuffle}
-          className = {styles.sidebarImg} 
-          src='/img/shuffle.png'/>
-          <h3>Filters</h3>
-          <div className={styles.searchBar}>
-            <Dropdown options={['University', 'University of Pennsylvania', 'Northwestern University', "King's College"]} 
-            update = {updateUniversity} />
+          <div className = {styles.sidebar}>
+            <img
+            onClick={shuffle}
+            className = {styles.sidebarImg} 
+            src='/img/shuffle.png'/>
+            <h3>Filters</h3>
+            <div className={styles.searchBar}>
+              <Dropdown options={['University', 'University of Pennsylvania', 'Northwestern University', "King's College"]} 
+              update = {updateUniversity} />
+            </div>
+            <div className={styles.divider}></div>
+            <div className={styles.searchBar}>
+              <Dropdown options={['Position', 'Product Designer', 'UI/UX', 'Asset Management']} 
+              update = {updatePosition}/>
+            </div>
+            <div className={styles.divider}></div>
+            <div className={styles.searchBar}>
+              <Dropdown options={['Company', 'Spotify', 'Docker', 'Encamp', 'Barchart', 'HSBC', 'Google', 'Bain']} 
+              update = {updateCompany}/>
+            </div>
+            <div className={styles.divider}></div>
           </div>
-          <div className={styles.divider}></div>
-          <div className={styles.searchBar}>
-            <Dropdown options={['Position', 'Product Designer', 'UI/UX', 'Asset Management']} 
-            update = {updatePosition}/>
-            {/*<img src='/img/magnifying-glass.svg'/>*/}
-          </div>
-          {/*<div className={styles.tags}>
-            <p>Product Design</p>
-            <img src='/img/cross.svg'/>
-          </div>*/}
-          <div className={styles.divider}></div>
-          <div className={styles.searchBar}>
-            <Dropdown options={['Company', 'Spotify', 'Docker', 'Encamp', 'Barchart', 'HSBC', 'Google', 'Bain']} 
-            update = {updateCompany}/>
-          </div>
-          <div className={styles.divider}></div>
+          <div className = {styles.path}>
+          {filtered.map((path, index) => ( path.visible &&
+            <Path 
+            key={path.id}
+            id = {path.id}
+            name = {path.name}
+            pathData = {path.pathData}
+            bookmarked = {path.bookmarked}
+            visible = {path.visible}
+            bookmarkStateChange = {bookmarkStateChange}
+            />
+          ))}
         </div>
-        <div className = {styles.path}>
-        {filtered.map((path, index) => ( path.visible &&
-          <Path 
-          key={path.id}
-          id = {path.id}
-          name = {path.name}
-          pathData = {path.pathData}
-          bookmarked = {path.bookmarked}
-          visible = {path.visible}
-          bookmarkStateChange = {bookmarkStateChange}
-          />
-        ))}
+        <div className = {styles.aggregateButton}>
+            <img src='/img/popoutButton.svg'
+            onClick={() => {updateAggregate();}}/>
         </div>
-        </div>
-        
+      </div>
     </div>
     </main>
   )
