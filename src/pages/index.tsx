@@ -154,9 +154,6 @@ function closeAggregate() {
     <div className = {styles.container}
     onClick={() => {closeAggregate();}}>
         <NavBar />
-        <div className = {styles.timeline}>
-          <img src='/img/timeline.png'></img>
-        </div>
         <div>
           <SlideOutRight isOpen={aggregateSlider} />
         </div>

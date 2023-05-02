@@ -20,6 +20,7 @@
 .sidebarImg {
   height: 7vw;
   width: 7vw;
+  cursor: pointer;
 }
 
 .sidebar {

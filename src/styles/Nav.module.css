@@ -10,6 +10,7 @@
     align-items: center;
     list-style: none;
     gap: 2rem;
+
 }
 
 .nav li:hover {
@@ -32,4 +33,26 @@
     padding-left: 30vw;
 }
 
+.timeline {
+    margin: 0;
+    margin-left: 250px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 46px;
+    background-color: white;
+    font-size: 14px;
+    color: black;
+}
 
+.timeline div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline p {
+    margin: 0;
+}

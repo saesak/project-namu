@@ -6,8 +6,9 @@
     margin-bottom: auto;
 }
 
-.name {
-    margin-left: 15%;
+.pathName {
+    font-weight: 600;
+    margin-right: 40px;
 }
 
 .container {
@@ -18,7 +19,7 @@
 
 .path {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     margin-left: auto;
 }
 
@@ -30,18 +31,29 @@
     display: flex;
     flex-direction: column;
     margin-top: 5vw;
+    margin-bottom: 10px;
     cursor: pointer;
+}
+
+.jobDesc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .jobDesc p {
     padding: 0;
+    margin: 8px 8px;
+    width: 10vw;
     text-align: center;
+
 }
 
 .circleOverall {
     display: flex;
     width: 6vw;
     flex-direction: column;
+    align-items: center;
 }
 
 .icon {

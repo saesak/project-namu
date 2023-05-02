@@ -35,51 +35,7 @@ export const initialState: pathArray = {
     pathArray: [
         {
         id: 0,
-        name: "anonymous tree 1",
-        education: {
-            major: "Computer Science",
-            minor: "None",
-        },
-        pathData: [
-            {
-                start: 2009,
-                end: 2011,
-                icon: "../img/NWU.png",
-                size: 1.5,
-                company: "Northwestern University",
-                occupation: "Undergraduate",
-            },
-            {
-                start: 2011,
-                end: 2015,
-                icon: "../img/barchart.png",
-                size: 1.5,
-                company: "Barchart",
-                occupation: "Software Engineer",
-            },
-            {
-                start: 2015,
-                end: 2020,
-                icon: "../img/google.png",
-                size: 4,
-                company: "Google",
-                occupation: "Software Engineer",
-            },
-            {
-                start: 2020,
-                end: 2023,
-                icon: "../img/purpleLeaf.png",
-                size: 1.5,
-                company: "PurpleLeaf",
-                occupation: "UI/UX",
-            }
-        ],
-        bookmarked: false,
-        visible: true
-        },
-        {
-        id: 1,
-        name: "anonymous tree 2",
+        name: "Ben Franklin",
         education: {
             major: "Computer Science",
             minor: "Cognitive Science",
@@ -122,8 +78,52 @@ export const initialState: pathArray = {
         visible: true
         },
         {
+        id: 1,
+        name: "Anonymous",
+        education: {
+            major: "Computer Science",
+            minor: "None",
+        },
+        pathData: [
+            {
+                start: 2009,
+                end: 2011,
+                icon: "../img/NWU.png",
+                size: 1.5,
+                company: "Northwestern University",
+                occupation: "Undergraduate",
+            },
+            {
+                start: 2011,
+                end: 2015,
+                icon: "../img/barchart.png",
+                size: 1.5,
+                company: "Barchart",
+                occupation: "Software Engineer",
+            },
+            {
+                start: 2015,
+                end: 2020,
+                icon: "../img/google.png",
+                size: 4,
+                company: "Google",
+                occupation: "Software Engineer",
+            },
+            {
+                start: 2020,
+                end: 2023,
+                icon: "../img/purpleLeaf.png",
+                size: 1.5,
+                company: "PurpleLeaf",
+                occupation: "UI/UX",
+            }
+        ],
+        bookmarked: false,
+        visible: true
+        },
+        {
         id: 2,
-        name: "anonymous tree 3",
+        name: "Quaker",
         education: {
             major: "Finance",
             minor: "None",
@@ -151,7 +151,7 @@ export const initialState: pathArray = {
         },
         {
         id: 3,
-        name: "anonymous tree 4",
+        name: "Anonymous",
         education: {
             major: "Business Operations",
             minor: "Finance",
@@ -187,7 +187,7 @@ export const initialState: pathArray = {
         },
         {
             id: 4,
-            name: "anonymous tree 5",
+            name: "Amy Gutmann",
             education: {
                 major: "Biological Basis of Behavior",
                 minor: "English",
@@ -215,7 +215,7 @@ export const initialState: pathArray = {
             },
             {
                 id: 5,
-                name: "anonymous tree 6",
+                name: "Liz Magill",
                 education: {
                     major: "Design",
                     minor: "Computer Science",
@@ -243,7 +243,7 @@ export const initialState: pathArray = {
                 },
                 {
                     id: 6,
-                    name: "anonymous tree 7",
+                    name: "Dean Furda",
                     education: {
                         major: "Computer Science",
                         minor: "Design",

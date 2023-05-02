@@ -7,6 +7,8 @@ import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import Popup from './categoryPopup'
 import SlideOutLeft from './slideOutLeft'
+import { MdAlternateEmail } from "react-icons/md";
+
 
 
 
@@ -67,10 +69,10 @@ export default function Path(props: pathProps) {
                 <div>
                     <SlideOutLeft isOpen={educationSlider} />
                 </div>
-                <div className = {styles.name}>
-                    <p>{path.name}</p>
-                </div>
                 <div className = {styles.path}>
+                    <div className = {styles.pathName}>
+                        <p>{path.name}</p>
+                    </div>
                     {path.pathData.map((data, index) => (
                     <div key={index} className={styles.pathContainer}>
                     { index === 0 && <div className={styles.hoverText}> <p>See Education</p> </div>}
@@ -82,7 +84,8 @@ export default function Path(props: pathProps) {
                         </div>
                         <div className={styles.jobDesc}>
                             <p>{data.occupation}</p>
-                            <p>@{data.company}</p>
+                            <MdAlternateEmail/>
+                            <p>{data.company}</p>
                         </div>
                         </div>
                         <div 
