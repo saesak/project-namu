@@ -20,7 +20,7 @@ export default function Dropdown({ options, update }: DropdownProps) {
     <div className={styles.dropdown}>
       <div className={styles.selectedOption} onClick={() => setIsOpen(!isOpen)}>
         {selectedOption}
-        <span className={styles.arrow}>{isOpen ? '▲' : '▼'}</span>
+        <span className={styles.arrow}>{isOpen ? '▲' : '  ▼'}</span>
       </div>
       {isOpen && (
         <div className={styles.options}>

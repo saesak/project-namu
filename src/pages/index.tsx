@@ -167,17 +167,17 @@ function closeAggregate() {
             className = {styles.sidebarImg} 
             src='/img/shuffle.png'/>
             <h3>Filters</h3>
-            <div className={styles.searchBar}>
+            <div>
               <Dropdown options={['University', 'University of Pennsylvania', 'Northwestern University', "King's College"]} 
               update = {updateUniversity} />
             </div>
             <div className={styles.divider}></div>
-            <div className={styles.searchBar}>
+            <div>
               <Dropdown options={['Position', 'Product Designer', 'UI/UX', 'Asset Management']} 
               update = {updatePosition}/>
             </div>
             <div className={styles.divider}></div>
-            <div className={styles.searchBar}>
+            <div>
               <Dropdown options={['Company', 'Spotify', 'Docker', 'Encamp', 'Barchart', 'HSBC', 'Google', 'Bain']} 
               update = {updateCompany}/>
             </div>

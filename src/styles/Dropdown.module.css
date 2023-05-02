@@ -1,0 +1,38 @@
+.dropdown {
+    cursor: pointer;
+}
+
+.selectedOption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 14px;
+    height: 46px;
+    width: 80%;
+    background-color: #F8F8F8;
+    border-radius: 8px;
+    color: #3c3c3c;
+}
+
+.selectedOption:hover {
+    background-color: #ededed;
+}
+
+.options {
+    margin-top: 8px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #3c3c3c;
+    border-radius: 8px;
+}
+
+.option {
+    padding: 5px 14px;
+}
+
+.option:hover {
+    background-color: #ededed;
+    border-radius: 8px;
+}
