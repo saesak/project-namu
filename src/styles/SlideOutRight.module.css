@@ -1,6 +1,5 @@
 .slideOut {
-  width: 33vw;
-  height: 100vh;
+
   background-color: white;
   position: fixed;
   top: 0;
@@ -25,6 +24,6 @@
   display: flex;
   top:0;
   right:0;
-  width: 32vw;
-  height: 98vh;
+  width: auto;
+  height: 100%;
 }

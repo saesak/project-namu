@@ -83,12 +83,12 @@
 
 .aggregateButton {
   margin-top: 8vh;
+  cursor: pointer;
 }
 
 .aggregateButton img {
-  height: 5vh;
-  width: 5vh;
-  background-color: white;
+  height: 10vh;
+  width: auto;
 }
 
 .timeline {

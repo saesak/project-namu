@@ -55,7 +55,6 @@ function visibleStateChange(id : number) {
         <NavBar />
         <div className = {styles.sidebarPath}>
             <div className = {styles.sidebar}>
-                <p>Bookmarks</p>
                 {state.pathArray.filter(item => item.bookmarked).map((path, index) => (
                     <BookmarkBar
                     key = {path.id}

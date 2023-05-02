@@ -194,7 +194,7 @@ function closeAggregate() {
           ))}
         </div>
         <div className = {styles.aggregateButton}>
-            <img src='/img/popoutButton.svg'
+            <img src='/img/Right Slideout Panel Icon.png'
             onClick={() => {updateAggregate();}}/>
         </div>
       </div>
