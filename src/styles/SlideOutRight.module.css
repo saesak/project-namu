@@ -1,6 +1,5 @@
 .slideOut {
 
-  background-color: white;
   position: fixed;
   top: 0;
   right: 0;
@@ -8,6 +7,8 @@
               cubic-bezier(0, .52, 0, 1);
   overflow: scroll;
   z-index: 1000;
+  box-shadow: -3px 10px 15px rgba(0, 0, 0, 0.07);
+
   }
 
 .slideOutShow {
@@ -24,6 +25,6 @@
   display: flex;
   top:0;
   right:0;
-  width: auto;
+  width: 26vw;
   height: 100%;
 }

@@ -1,7 +1,6 @@
 .slideOut {
-  width: 33vw;
+  width: 32vw;
   height: 100vh;
-  background-color: white;
   position: fixed;
   top: 0;
   left: 0;
@@ -9,6 +8,7 @@
               cubic-bezier(0, .52, 0, 1);
   overflow: scroll;
   z-index: 1000;
+  box-shadow: 3px 10px 15px rgba(0, 0, 0, 0.07);
   }
 
 .slideOutShow {
@@ -25,6 +25,6 @@
   display: flex;
   top:0;
   left:0;
-  width: 32vw;
-  height: 98vh;
+  width: auto;
+  height: 100%;
 }

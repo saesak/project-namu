@@ -1,9 +1,12 @@
 .checkAndName {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin-left: 16px;
 }
 
 .checkboxIcon {
-    height: 3vw;
-    width: 3vw;
+    height: 2vw;
+    width: 2vw;
+    margin: 0px 5px;
 }
